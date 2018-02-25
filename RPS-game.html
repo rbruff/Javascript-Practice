@@ -3,21 +3,113 @@
 
 <head>
     <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            background-image: url(who-invented-rock-paper-scissors.png);
+            background-size: 375px 175px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .game {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 50px;
+            justify-content: center;
+            text-align: center;
+            width: 500px;
+        }
+
+
+        .header {
+            background-color: #ff5966;
+
+        }
+
+        .guesses {
+            background-color: #ffaf40;
+        }
+
+        .scoreboard {
+            background-color: #67bf60;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Rock, Paper, Scissors... SHOOT!</h1>
 
-    <div>
-        <h2>User's Guess = <span id="user-guess"></span></h2>
-        <h2>Computer's Guess = <span id="comp-guess"></span></h2>
-        <h3>Number of Wins = <span id="wins"></span></h3>
-        <h3>Number of Loses = <span id="loses"></span></h3>
-        <h3>Number of Ties = <span id="ties"></span></h3>
+
+    <div class="game">
+        <h1 class="header">Rock, Paper, Scissors... SHOOT!</h1>
+        <div class="guesses">
+            <h2>User's Guess =
+                <span id="user-guess">-</span>
+            </h2>
+            <h2>Computer's Guess =
+                <span id="comp-guess">-</span>
+            </h2>
+        </div>
+        <div class="scoreboard">
+            <h3>Number of Wins =
+                <span id="wins">0</span>
+            </h3>
+            <h3>Number of Loses =
+                <span id="losses">0</span>
+            </h3>
+            <h3>Number of Ties =
+                <span id="ties">0</span>
+            </h3>
+        </div>
 
 
 
     </div>
+
+    <script type="text/javascript">
+        // create array for possible choices
+
+        var choices = ['r', 'p', 's'];
+
+        // create variable for # or wins/ losses/ ties
+        var winsScore = 0;
+        var lossScore = 0;
+        var tieScore = 0;
+
+        // create function for when key is pressed
+        document.onkeyup = function (event) {
+            // capture user guess
+            var userGuess = event.key;
+            // generate comp guess
+            var compGuess = choices[Math.floor(Math.random() * choices.length)];
+            // compare guesses with if/ else statement
+            if (userGuess === 'r' || userGuess === 'p' || userGuess === 's') {
+                if (userGuess === 'r' && compGuess === 'p') {
+                    lossScore++
+                } else if (userGuess === 'r' && compGuess === 's') {
+                    winsScore++
+                } else if (userGuess === 'p' && compGuess === 's') {
+                    lossScore++
+                } else if (userGuess === 'p' && compGuess === 'r') {
+                    winsScore++
+                } else if (userGuess === 's' && compGuess === 'p') {
+                    winsScore++
+                } else if (userGuess === 's' && compGuess === 'r') {
+                    lossScore++
+                } else if (userGuess === compGuess) {
+                    tieScore++
+                }
+
+            } else {
+                alert("you must press 'r' for rock, 'p' for paper or 's' for scissors! (no capital letters please)")
+            }
+            // write results to html
+            document.getElementById("user-guess").innerHTML = userGuess;
+            document.getElementById("comp-guess").innerHTML = compGuess;
+            document.getElementById("wins").innerHTML = winsScore;
+            document.getElementById("losses").innerHTML = lossScore;
+            document.getElementById("ties").innerHTML = tieScore;
+        }
+    </script>
 
 </body>
 
