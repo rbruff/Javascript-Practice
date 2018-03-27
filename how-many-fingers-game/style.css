@@ -1,0 +1,19 @@
+.jumbotron{
+  width: 900px;
+  margin: auto;
+  margin-top: 20px;
+}
+.fing-disp{
+  height: auto;
+    width: auto;
+    background-color: white;
+    padding: 10px;
+}
+.disp-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#input-disp{
+  padding-top: 100px;
+}
