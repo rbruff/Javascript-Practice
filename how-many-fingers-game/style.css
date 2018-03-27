@@ -8,12 +8,16 @@
     width: auto;
     background-color: white;
     padding: 10px;
+    border: 1px solid black;
 }
-.disp-img{
+#disp-img{
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 #input-disp{
   padding-top: 100px;
+}
+body{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHxyNjfo4Bld7a85mHBpBEuUl5rQhq0Dc-0c6I8Mdu9DGWGzMSAg);
 }

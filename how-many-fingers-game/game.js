@@ -13,9 +13,31 @@
       if (fingers == userGuess) {
           // then write a message to the doc confirm message container
           document.getElementById("confirm").innerHTML = "You got it! I am holding up " + fingers + " finger!"
+          if (fingers === 1){
+            document.getElementById("disp-img").src = 'icons-collection/png/005-hand-1.png'
+          } else if (fingers === 2){
+            document.getElementById("disp-img").src = 'icons-collection/png/004-two-fingers.png'
+          } else if (fingers === 3){
+            document.getElementById("disp-img").src = 'icons-collection/png/006-three-fingers.png'
+          } else if (fingers === 4){
+            document.getElementById("disp-img").src = 'icons-collection/png/007-hand.png'
+          } else {
+            document.getElementById("disp-img").src = 'icons-collection/png/003-hand-2.png'
+          }
       }
       // otherwise write a message saying otherwise
       else {
           document.getElementById("confirm").innerHTML = "Nope, I'm holding up " + fingers + " fingers, but you guessed " + userGuess + "."
+          if (fingers === 1){
+            document.getElementById("disp-img").src = 'icons-collection/png/005-hand-1.png'
+          } else if (fingers === 2){
+            document.getElementById("disp-img").src = 'icons-collection/png/004-two-fingers.png'
+          } else if (fingers === 3){
+            document.getElementById("disp-img").src = 'icons-collection/png/006-three-fingers.png'
+          } else if (fingers === 4){
+            document.getElementById("disp-img").src = 'icons-collection/png/007-hand.png'
+          } else {
+            document.getElementById("disp-img").src = 'icons-collection/png/003-hand-2.png'
+          }
       }
   }
